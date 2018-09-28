@@ -66,6 +66,14 @@ public class MainNavigation extends AppCompatActivity {
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
     }
 
+    private void loadHope(Fragment fragment){
+
+        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        transaction.replace(R.id.frame_container, fragment);
+        transaction.addToBackStack(null);
+        transaction.commit();
+    }
+
     private void loadFragment(Fragment fragment) {
 
         // load fragment
@@ -74,5 +82,4 @@ public class MainNavigation extends AppCompatActivity {
         transaction.addToBackStack(null);
         transaction.commit();
     }
-
 }
